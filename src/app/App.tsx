@@ -3,8 +3,8 @@ import { Clock } from '@/app/components/Clock';
 import { PinKiosk } from '@/app/components/PinKiosk';
 import { Dashboard } from '@/app/components/Dashboard';
 import { Toaster } from 'sonner';
-import clockIcon from "figma:asset/a3497bedc319b7848aa5810d9c6a55111f0ef68d.png";
-import timecutText from "figma:asset/c8efd5d814a51b9d425429ab41084213799e9200.png";
+import clockIcon from "/assets/2.png";
+import timecutText from "/assets/3.png";
 
 interface User {
   id: string;
