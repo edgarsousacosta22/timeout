@@ -5,9 +5,9 @@ import { Dashboard } from '@/app/components/Dashboard';
 import { Toaster } from 'sonner';
 import clockIcon from "/assets/2.png";
 import timecutText from "/assets/3.png";
-import './styles/index.css';
-import './styles/theme.css';
-import './styles/tailwind.css';
+import '/styles/index.css';
+import '/styles/theme.css';
+import '/styles/tailwind.css';
 
 interface User {
   id: string;
