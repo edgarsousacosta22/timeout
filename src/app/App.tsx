@@ -1,0 +1,55 @@
+import React, { useState } from 'react';
+import { Clock } from '@/app/components/Clock';
+import { PinKiosk } from '@/app/components/PinKiosk';
+import { Dashboard } from '@/app/components/Dashboard';
+import { Toaster } from 'sonner';
+import clockIcon from "figma:asset/a3497bedc319b7848aa5810d9c6a55111f0ef68d.png";
+import timecutText from "figma:asset/c8efd5d814a51b9d425429ab41084213799e9200.png";
+
+interface User {
+  id: string;
+  full_name: string;
+  pin_ponto: string;
+}
+
+const App = () => {
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
+
+  const handleLoginSuccess = (user: User) => {
+    setCurrentUser(user);
+  };
+
+  const handleLogout = () => {
+    setCurrentUser(null);
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-slate-200">
+      <Toaster position="top-center" richColors />
+      
+      <main className="container mx-auto px-4 py-12 flex flex-col items-center justify-center min-h-screen bg-[rgb(255,255,255)] relative">
+        <div className="flex-1 flex flex-col items-center justify-center w-full">
+          {!currentUser ? (
+            <>
+              <div className="flex items-center justify-center gap-10 mb-[-64px] relative z-20 mt-[0px] mr-[40px] ml-[0px]">
+                <img src={clockIcon} alt="Clock Icon" className="h-56 w-auto mt-[0px] mr-[-30px] mb-[15px] ml-[0px]" />
+                <img src={timecutText} alt="TIMECut" className="h-56 w-auto mt-[0px] mr-[0px] mb-[-5px] ml-[-95px] mx-[-56px] my-[0px]" />
+              </div>
+              <PinKiosk onSuccess={handleLoginSuccess} />
+            </>
+          ) : (
+            <Dashboard user={currentUser} onLogout={handleLogout} />
+          )}
+        </div>
+      </main>
+      
+      {/* Background Decor */}
+      <div className="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-100/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-emerald-100/30 rounded-full blur-3xl" />
+      </div>
+    </div>
+  );
+};
+
+export default App;
