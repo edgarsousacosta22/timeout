@@ -8,7 +8,7 @@ import timecutText from "/assets/3.png";
 import '/styles/index.css';
 import '/styles/theme.css';
 import '/styles/tailwind.css';
-
+import '/styles/fonts.css';
 interface User {
   id: string;
   full_name: string;
