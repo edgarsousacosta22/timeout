@@ -189,7 +189,7 @@ export const Dashboard = ({ user, onLogout }: DashboardProps) => {
   const canSaida = !!punches.entrada && !punches.saida && !isProcessing;
   const canPausa = !!punches.entrada && !punches.pausa && !isSaidaBloqueada && !isProcessing;
   const canVoltaPausa = !!punches.pausa && !punches.voltaPausa && !isSaidaBloqueada && !isProcessing;
-  const canAlmoco = !!punches.entrada && !!punches. pausa && !punches.almoco && !isSaidaBloqueada && !isProcessing;
+  const canAlmoco = !!punches.entrada && !!punches.pausa && !punches.almoco && !isSaidaBloqueada && !isProcessing;
   const canVoltaAlmoco = !!punches.almoco && !punches.voltaAlmoco && !isSaidaBloqueada && !isProcessing;
 
   const InfoRow = ({ label1, value1, label2, value2, label3,value3 }: { label1: string, value1: string | null, label2: string, value2: string | null}) => (
