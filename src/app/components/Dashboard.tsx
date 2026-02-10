@@ -14,6 +14,8 @@ interface DashboardProps {
 interface PunchTimes {
   entrada: string | null;
   saida: string | null;
+  pausa: string | null;
+  voltaPausa: string | null;
   almoco: string | null;
   voltaAlmoco: string | null;
 }
@@ -26,6 +28,8 @@ export const Dashboard = ({ user, onLogout }: DashboardProps) => {
   const [punches, setPunches] = useState<PunchTimes>({
     entrada: null,
     saida: null,
+    pausa: null,
+    voltaPausa: null,
     almoco: null,
     voltaAlmoco: null,
   });
@@ -53,6 +57,8 @@ export const Dashboard = ({ user, onLogout }: DashboardProps) => {
           setPunches({
             entrada: data.hora_entrada,
             saida: data.hora_saida,
+            pausa: data.hora_entrada_pausa,
+            voltaPausa: data.hora_saida_pausa,
             almoco: data.hora_entrada_almoco,
             voltaAlmoco: data.hora_saida_almoco,
           });
@@ -119,6 +125,8 @@ export const Dashboard = ({ user, onLogout }: DashboardProps) => {
     const columnMap: Record<keyof PunchTimes, string> = {
       entrada: 'hora_entrada',
       saida: 'hora_saida',
+      pausa: 'hora_entrada_saida',
+      voltaPausa: 'hora_saida_saida',
       almoco: 'hora_entrada_almoco',
       voltaAlmoco: 'hora_saida_almoco',
     };
@@ -126,6 +134,8 @@ export const Dashboard = ({ user, onLogout }: DashboardProps) => {
     const messages: Record<string, string> = {
       entrada: 'Entrada registada com sucesso!',
       saida: 'Saída registada com sucesso!',
+      pausa: 'Início da pausa registado! Bom descanso.',
+      voltaPausa: 'Regresso da pausa registado! Bom Trabalho.',
       almoco: 'Início de almoço registado! Bom apetite.',
       voltaAlmoco: 'Regresso de almoço registado! Bom trabalho.',
     };
@@ -177,8 +187,10 @@ export const Dashboard = ({ user, onLogout }: DashboardProps) => {
   
   const canEntrada = !punches.entrada && !isSaidaBloqueada && !isProcessing;
   const canSaida = !!punches.entrada && !punches.saida && !isProcessing;
-  const canAlmoco = !!punches.entrada && !punches.almoco && !isSaidaBloqueada && !isProcessing;
-  const canVoltaAlmoco = !!punches.almoco && !punches.voltaAlmoco && !isSaidaBloqueada && !isProcessing;
+  const canPausa = !!punches.entrada && !punches.almoco && !punches.pausa && !isSaidaBloqueada && !isProcessing;
+  const canVoltaPausa = !!punches.pausa && !punches.almoco && !punches.voltaPausa && !isSaidaBloqueada && !isProcessing;
+  const canAlmoco = !!punches.entrada && !punches.almoco && !punches.pausa && !isSaidaBloqueada && !isProcessing;
+  const canVoltaAlmoco = !!punches.almoco && !punches.pausa && !punches.voltaAlmoco && !isSaidaBloqueada && !isProcessing;
 
   const InfoRow = ({ label1, value1, label2, value2 }: { label1: string, value1: string | null, label2: string, value2: string | null }) => (
     <div className="grid grid-cols-2 gap-4 py-2 border-b border-slate-100 last:border-0">
@@ -276,7 +288,23 @@ export const Dashboard = ({ user, onLogout }: DashboardProps) => {
           variant="rose"
         />
 
-        {/* Row 2: Almoco and Volta Almoco */}
+        {/* Row 2: Pausa anda Volta Pausa */}
+        <Button 
+          label="Pausa" 
+          icon={<Utensils size={24} />} 
+          isActive={canPausa} 
+          onClick={() => handlePunch('pausa')}
+          variant="indigo"
+        />
+        <Button 
+          label="Volta Pausa" 
+          icon={<ArrowRight size={24} />} 
+          isActive={canVoltaPausa} 
+          onClick={() => handlePunch('voltaPausa')}
+          variant="slate"
+        />
+
+        {/* Row 3: Almoco and Volta Almoco */}
         <Button 
           label="Almoço" 
           icon={<Utensils size={24} />} 
