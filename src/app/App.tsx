@@ -35,7 +35,7 @@ const App = () => {
           {!currentUser ? (
             <>
               <div className="flex items-center justify-center gap-10 mb-[-64px] relative z-20 mt-[0px] mr-[40px] ml-[0px]">
-                <img src={clockIcon} alt="Clock Icon" className="h-56 w-auto mt-[0px] mr-[0px] mb-[30px] ml-[0px]" />
+                <img src={clockIcon} alt="Clock Icon" className="h-56 w-auto mt-[0px] mr-[0px] mb-[60px] ml-[0px]" />
                 <img src={timecutText} alt="TIMECut" className="h-56 w-auto mt-[0px] mr-[0px] mb-[0px] ml-[-95px] mx-[-56px] my-[0px]" />
               </div>
               <PinKiosk onSuccess={handleLoginSuccess} />
