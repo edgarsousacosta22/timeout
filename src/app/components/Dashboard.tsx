@@ -125,8 +125,8 @@ export const Dashboard = ({ user, onLogout }: DashboardProps) => {
     const columnMap: Record<keyof PunchTimes, string> = {
       entrada: 'hora_entrada',
       saida: 'hora_saida',
-      pausa: 'hora_entrada_saida',
-      voltaPausa: 'hora_saida_saida',
+      pausa: 'hora_entrada_pausa',
+      voltaPausa: 'hora_saida_pausa',
       almoco: 'hora_entrada_almoco',
       voltaAlmoco: 'hora_saida_almoco',
     };
@@ -192,7 +192,7 @@ export const Dashboard = ({ user, onLogout }: DashboardProps) => {
   const canAlmoco = !!punches.entrada && !punches.almoco && !punches.pausa && !isSaidaBloqueada && !isProcessing;
   const canVoltaAlmoco = !!punches.almoco && !punches.pausa && !punches.voltaAlmoco && !isSaidaBloqueada && !isProcessing;
 
-  const InfoRow = ({ label1, value1, label2, value2 }: { label1: string, value1: string | null, label2: string, value2: string | null }) => (
+  const InfoRow = ({ label1, value1, label2, value2, label3,value3 }: { label1: string, value1: string | null, label2: string, value2: string | null}) => (
     <div className="grid grid-cols-2 gap-4 py-2 border-b border-slate-100 last:border-0">
       <div className="flex flex-col">
         <span className="text-xs font-bold text-[rgb(3,25,116)] uppercase tracking-wider">{label1}</span>
@@ -265,6 +265,7 @@ export const Dashboard = ({ user, onLogout }: DashboardProps) => {
           
           <div className="space-y-0.5">
             <InfoRow label1="Entrada" value1={punches.entrada} label2="Saída" value2={punches.saida} />
+            <InfoRow label1="Pausa" value1={punches.pausa} label2="Volta Pausa" value2={punches.voltaPausa} />
             <InfoRow label1="Almoço" value1={punches.almoco} label2="Volta Almoço" value2={punches.voltaAlmoco} />
           </div>
         </div>
