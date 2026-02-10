@@ -184,13 +184,12 @@ export const Dashboard = ({ user, onLogout }: DashboardProps) => {
 
   // Logic for unlocking buttons based on the description
   const isSaidaBloqueada = !!punches.saida;
-  const isAlmocoBloqueado = !!punches.almoco;
   
   const canEntrada = !punches.entrada && !isSaidaBloqueada && !isProcessing;
   const canSaida = !!punches.entrada && !punches.saida && !isProcessing;
-  const canPausa = !!punches.entrada && !punches.pausa && isAlmocoBloqueado && !isProcesing && !isSaidaBloqueada && !isProcessing;
-  const canVoltaPausa = !!punches.pausa && !punches.voltaPausa && isAlmocoBloqueado && !isProcesing && !isSaidaBloqueada && !isProcessing;
-  const canAlmoco = !!punches.entrada && !punches.almoco && !isSaidaBloqueada && !isProcessing;
+  const canPausa = !!punches.entrada && !punches.pausa && !isSaidaBloqueada && !isProcessing;
+  const canVoltaPausa = !!punches.pausa && !punches.voltaPausa && !isSaidaBloqueada && !isProcessing;
+  const canAlmoco = !!punches.entrada && !!punches. pausa && !punches.almoco && !isSaidaBloqueada && !isProcessing;
   const canVoltaAlmoco = !!punches.almoco && !punches.voltaAlmoco && !isSaidaBloqueada && !isProcessing;
 
   const InfoRow = ({ label1, value1, label2, value2, label3,value3 }: { label1: string, value1: string | null, label2: string, value2: string | null}) => (
