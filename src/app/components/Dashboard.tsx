@@ -48,6 +48,7 @@ export const Dashboard = ({ user, onLogout }: DashboardProps) => {
           .from('timesheet')
           .select('*')
           .eq('employee_id', user.id)
+          .eq('company_id', user.id)
           .eq('data_ponto', today)
           .maybeSingle();
 
@@ -146,6 +147,7 @@ export const Dashboard = ({ user, onLogout }: DashboardProps) => {
         .from('timesheet')
         .select('id')
         .eq('employee_id', user.id)
+        .eq('company_id', user.id)
         .eq('data_ponto', today)
         .maybeSingle();
 
