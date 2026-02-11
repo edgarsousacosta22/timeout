@@ -3,8 +3,7 @@ import { Clock } from '@/app/components/Clock';
 import { PinKiosk } from '@/app/components/PinKiosk';
 import { Dashboard } from '@/app/components/Dashboard';
 import { Toaster } from 'sonner';
-import clockIcon from "/assets/Clock.png";
-import timecutText from "/assets/TIMECut.png";
+import logo from "/assets/Logo.png";
 import '../styles/index.css';
 import '../styles/theme.css';
 import '../styles/tailwind.css';
@@ -35,8 +34,7 @@ const App = () => {
           {!currentUser ? (
             <>
               <div className="flex items-center justify-center -mt-[60px] relative z-20">
-                <img src={clockIcon} alt="Clock Icon" className="h-56 shrink-0" />
-                <img src={timecutText} alt="TIMECut" className="h-56 shrink-0"/>
+                <img src={logo} alt="Logotipo" className="h-56" />
               </div>
               <PinKiosk onSuccess={handleLoginSuccess} />
             </>
