@@ -34,7 +34,7 @@ const App = () => {
           {!currentUser ? (
             <>
               <div className="flex items-center justify-center -mt-[-30px] relative z-20">
-                <img src={logo} alt="Logotipo" className="h-[500px] w-[500]" />
+                <img src={logo} alt="Logotipo" className="h-[500px] w-[500px]" />
               </div>
               <PinKiosk onSuccess={handleLoginSuccess} />
             </>
