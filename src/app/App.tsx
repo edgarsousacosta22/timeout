@@ -26,7 +26,7 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-slate-200">
+    <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-slate-200 mb-[-200px]">
       <Toaster position="top-center" richColors />
       
       <main className="container mx-auto px-4 py-12 flex flex-col items-center justify-center min-h-screen bg-[rgb(255,255,255)] relative">
