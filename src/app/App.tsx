@@ -32,13 +32,32 @@ const App = () => {
     <div className="min-h-dvh w-full overflow-hidden bg-slate-50 font-sans text-slate-900">
       <Toaster position="top-center" richColors />
   
-      <main className="w-full h-dvh flex flex-col items-center justify-center portrait:justify-start portrait:pt-6 relative">
+      <main className="
+        w-full h-dvh
+        flex flex-col items-center
+        justify-center
+        portrait:justify-start
+        portrait:pt-6
+        relative
+      ">
+        
         <div className="flex flex-col items-center w-full">
           {!currentUser ? (
             <>
-              <div className="flex items-center justify-center portrait:-mt-10">
-                <img src={logo} alt="Logotipo" className="h-[400px] w-[400px] portrait:h-[600px] portrait:w-[600px]"/>
+              <div className="
+                flex items-center justify-center
+                portrait:-mt-10
+              ">
+                <img
+                  src={logo}
+                  alt="Logotipo"
+                  className="
+                    h-[380px] w-[380px]
+                    portrait:h-[520px] portrait:w-[520px]
+                  "
+                />
               </div>
+  
               <PinKiosk onSuccess={handleLoginSuccess} />
             </>
           ) : (
@@ -46,12 +65,6 @@ const App = () => {
           )}
         </div>
       </main>
-      
-      {/* Background Decor */}
-      <div className="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-100/30 rounded-full blur-3xl" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-emerald-100/30 rounded-full blur-3xl" />
-      </div>
     </div>
   );
 };
