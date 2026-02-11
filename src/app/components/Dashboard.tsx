@@ -260,7 +260,7 @@ export const Dashboard = ({ user, onLogout }: DashboardProps) => {
             </div>
             <div>
               <h3 className="text-lg font-bold text-[#031974]">
-                {getGreeting()}, {user.full_name}, {user.company_id}
+                {getGreeting()}, {user.full_name}
               </h3>
             </div>
           </div>
