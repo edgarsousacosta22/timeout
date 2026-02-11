@@ -7,7 +7,7 @@ import { toast } from 'sonner';
 import { supabase } from '@/lib/supabase';
 
 interface DashboardProps {
-  user: { id: string; full_name: string };
+  user: { id: string; full_name: string; company_id: string };
   onLogout: () => void;
 }
 
@@ -162,6 +162,7 @@ export const Dashboard = ({ user, onLogout }: DashboardProps) => {
           .from('timesheet')
           .insert({
             employee_id: user.id,
+            company_id: user.id,
             data_ponto: today,
             [columnMap[key]]: timeStr
           });
