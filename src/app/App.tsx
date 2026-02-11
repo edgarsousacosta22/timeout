@@ -30,7 +30,7 @@ const App = () => {
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-slate-200">
       <Toaster position="top-center" richColors />
       
-      <main className="container mx-auto px-4 py-12 flex flex-col items-center justify-center portrait:justify-start min-h-screen bg-[rgb(255,255,255)] relative">
+      <main className="  container mx-auto px-4 py-12 flex flex-col items-center justify-center portrait:justify-start portrait:pt-6 min-h-screen">
         <div className="flex-1 flex flex-col items-center justify-center w-full">
           {!currentUser ? (
             <>
