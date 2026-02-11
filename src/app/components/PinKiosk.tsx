@@ -81,7 +81,7 @@ export const PinKiosk = ({ onSuccess }: PinKioskProps) => {
   const timeString = format(currentTime, 'HH:mm:ss');
 
   return (
-    <div className="w-full max-w-2xl mx-auto overflow-hidden rounded-[40px] bg-[rgb(255,255,255)] shadow-2xl border border-slate-100 portrait:mb-[100px]">
+    <div className="w-full max-w-2xl mx-auto overflow-hidden rounded-[40px] bg-[rgb(255,255,255)] shadow-2xl border border-slate-100">
       {/* Top part of the square interior */}
       <div className="bg-[rgb(3,25,116)] p-10 text-center border-b border-slate-50 flex flex-col items-center">
         <h2 className="text-2xl font-medium text-white/80 mb-2 ">
@@ -141,5 +141,3 @@ export const PinKiosk = ({ onSuccess }: PinKioskProps) => {
     </div>
   );
 };
-
-
