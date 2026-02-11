@@ -33,7 +33,7 @@ const App = () => {
       <Toaster position="top-center" richColors />
       
       <main className="container mx-auto px-4 py-12 flex flex-col items-center justify-center min-h-screen bg-[rgb(255,255,255)] relative">
-        <div className="flex-1 flex flex-col items-center justify-center portrait:justify-start portrait:pt-8 w-full">
+        <div className="flex-1 flex flex-col items-center justify-center portrait:justify-start w-full">
           {!currentUser ? (
             <>
               <div className="flex items-center justify-center mb-[-130px] portrait:mt[0px]">
