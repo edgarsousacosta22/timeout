@@ -29,14 +29,14 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-slate-200">
+    <div className="min-h-dvh w-full overflow-hidden bg-slate-50 font-sans text-slate-900">
       <Toaster position="top-center" richColors />
-      
-      <main className=" container mx-auto px-4 flex flex-col items-center justify-start min-h-screen bg-[rgb(255,255,255)] relative">
-        <div className="flex-1 flex flex-col items-center justify-center w-full">
+  
+      <main className="w-full h-dvh flex flex-col items-center justify-center portrait:justify-start portrait:pt-6 relative">
+        <div className="flex flex-col items-center w-full">
           {!currentUser ? (
             <>
-              <div className="flex items-center justify-center mb-[-130px]">
+              <div className="flex items-center justify-center portrait:-mt-10">
                 <img src={logo} alt="Logotipo" className="h-[400px] w-[400px] portrait:h-[600px] portrait:w-[600px]"/>
               </div>
               <PinKiosk onSuccess={handleLoginSuccess} />
