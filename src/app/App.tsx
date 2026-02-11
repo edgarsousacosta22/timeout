@@ -10,6 +10,7 @@ import '../styles/tailwind.css';
 import '../styles/fonts.css';
 interface User {
   id: string;
+  company_id: string;
   full_name: string;
   pin_ponto: string;
 }
