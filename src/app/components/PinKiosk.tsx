@@ -10,6 +10,7 @@ import timecutText from "figma:asset/c8efd5d814a51b9d425429ab41084213799e9200.pn
 
 interface User {
   id: string;
+  company_id: string;
   full_name: string;
   pin_ponto: string;
 }
