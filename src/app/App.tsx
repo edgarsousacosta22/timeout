@@ -34,7 +34,7 @@ const App = () => {
         <div className="flex-1 flex flex-col items-center justify-center w-full">
           {!currentUser ? (
             <>
-              <div className="flex items-center justify-center gap-2 -mt-20 relative z-20">
+              <div className="flex items-center justify-center gap-2 -mt-[60px] relative z-20">
                 <img src={clockIcon} alt="Clock Icon" className="h-56 w-auto" />
                 <img src={timecutText} alt="TIMECut" className="h-56 w-auto" />
               </div>
