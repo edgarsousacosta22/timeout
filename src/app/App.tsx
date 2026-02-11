@@ -1,5 +1,3 @@
-No portrait quero a imagem e resto mais para cima
-
 import React, { useState } from 'react';
 import { Clock } from '@/app/components/Clock';
 import { PinKiosk } from '@/app/components/PinKiosk';
@@ -29,42 +27,38 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-dvh w-full overflow-hidden bg-slate-50 font-sans text-slate-900">
+    <div className="min-h-dvh w-full bg-slate-50 font-sans text-slate-900 overflow-hidden">
       <Toaster position="top-center" richColors />
-  
+      
       <main className="
         w-full h-dvh
-        flex flex-col items-center
-        justify-center
-        portrait:justify-start
-        portrait:pt-6
+        flex flex-col items-center justify-center
         relative
       ">
-        
-        <div className="flex flex-col items-center w-full">
-          {!currentUser ? (
-            <>
-              <div className="
-                flex items-center justify-center
-                portrait:-mt-10
-              ">
-                <img
-                  src={logo}
-                  alt="Logotipo"
-                  className="
-                    h-[380px] w-[380px]
-                    portrait:h-[520px] portrait:w-[520px]
-                  "
-                />
-              </div>
-  
-              <PinKiosk onSuccess={handleLoginSuccess} />
-            </>
-          ) : (
-            <Dashboard user={currentUser} onLogout={handleLogout} />
-          )}
-        </div>
+        {!currentUser ? (
+          <>
+            <div className="flex items-center justify-center">
+              <img 
+                src={logo} 
+                alt="Logotipo" 
+                className="
+                  h-[400px] w-[400px]
+                  portrait:h-[550px] portrait:w-[550px]
+                "
+              />
+            </div>
+            <PinKiosk onSuccess={handleLoginSuccess} />
+          </>
+        ) : (
+          <Dashboard user={currentUser} onLogout={handleLogout} />
+        )}
       </main>
+  
+      {/* Background Decor */}
+      <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-100/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-emerald-100/30 rounded-full blur-3xl" />
+      </div>
     </div>
   );
 };
