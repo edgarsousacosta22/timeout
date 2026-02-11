@@ -48,7 +48,7 @@ export const Dashboard = ({ user, onLogout }: DashboardProps) => {
           .from('timesheet')
           .select('*')
           .eq('employee_id', user.id)
-          .eq('company_id', user.id)
+          .eq('company_id', user.company_id)
           .eq('data_ponto', today)
           .maybeSingle();
 
@@ -147,7 +147,7 @@ export const Dashboard = ({ user, onLogout }: DashboardProps) => {
         .from('timesheet')
         .select('id')
         .eq('employee_id', user.id)
-        .eq('company_id', user.id)
+        .eq('company_id', user.company_id)
         .eq('data_ponto', today)
         .maybeSingle();
 
@@ -162,7 +162,7 @@ export const Dashboard = ({ user, onLogout }: DashboardProps) => {
           .from('timesheet')
           .insert({
             employee_id: user.id,
-            company_id: user.id,
+            company_id: user.company_id,
             data_ponto: today,
             [columnMap[key]]: timeStr
           });
