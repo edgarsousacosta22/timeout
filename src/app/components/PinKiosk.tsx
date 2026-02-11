@@ -10,6 +10,7 @@ import timecutText from "figma:asset/c8efd5d814a51b9d425429ab41084213799e9200.pn
 
 interface User {
   id: string;
+  company_id: string;
   full_name: string;
   pin_ponto: string;
 }
@@ -55,7 +56,7 @@ export const PinKiosk = ({ onSuccess }: PinKioskProps) => {
     try {
       const { data, error } = await supabase
         .from('employees')
-        .select('id, full_name, pin_ponto')
+        .select('id, company_id, full_name, pin_ponto')
         .eq('pin_ponto', pin)
         .maybeSingle();
 
