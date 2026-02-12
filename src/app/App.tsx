@@ -27,40 +27,30 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-dvh w-full bg-slate-50 font-sans text-slate-900 overflow-hidden">
+    <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-slate-200">
       <Toaster position="top-center" richColors />
       
-      <main className="
-        w-full h-dvh
-        flex flex-col items-center justify-center
-        relative
-      ">
-        {!currentUser ? (
-          <>
-            <div className="flex items-center justify-center">
-              <img 
-                src={logo} 
-                alt="Logotipo" 
-                className="
-                  h-[400px] w-[400px]
-                  portrait:h-[550px] portrait:w-[550px]
-                "
-              />
-            </div>
-            <PinKiosk onSuccess={handleLoginSuccess} />
-          </>
-        ) : (
-          <Dashboard user={currentUser} onLogout={handleLogout} />
-        )}
+      <main className=" container mx-auto px-4 flex flex-col items-center justify-start min-h-screen bg-[rgb(255,255,255)] relative">
+        <div className="flex-1 flex flex-col items-center justify-center w-full">
+          {!currentUser ? (
+            <>
+              <div className="flex items-center justify-center mb-[-130px]">
+                <img src={logo} alt="Logotipo" className="h-[400px] w-[400px] portrait:h-[600px] portrait:w-[600px]"/>
+              </div>
+              <PinKiosk onSuccess={handleLoginSuccess} />
+            </>
+          ) : (
+            <Dashboard user={currentUser} onLogout={handleLogout} />
+          )}
+        </div>
       </main>
-  
+      
       {/* Background Decor */}
-      <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+      <div className="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-100/30 rounded-full blur-3xl" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-emerald-100/30 rounded-full blur-3xl" />
       </div>
     </div>
   );
 };
-
 export default App;
