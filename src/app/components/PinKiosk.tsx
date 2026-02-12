@@ -31,9 +31,9 @@ export const PinKiosk = ({ onSuccess }: PinKioskProps) => {
 
   const getGreeting = () => {
     const hour = currentTime.getHours();
-    if (hour >= 5 && hour < 12) return 'Bom dia';
-    if (hour >= 12 && hour < 18) return 'Boa tarde';
-    return 'Boa noite';
+    if (hour >= 5 && hour < 12) return 'bom dia';
+    if (hour >= 12 && hour < 18) return 'boa tarde';
+    return 'boa noite';
   };
 
   const handleNumberClick = (num: string) => {
