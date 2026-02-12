@@ -31,9 +31,9 @@ export const PinKiosk = ({ onSuccess }: PinKioskProps) => {
 
   const getGreeting = () => {
     const hour = currentTime.getHours();
-    if (hour >= 5 && hour < 12) return 'bom dia';
-    if (hour >= 12 && hour < 18) return 'boa tarde';
-    return 'boa noite';
+    if (hour >= 5 && hour < 12) return 'Bom dia';
+    if (hour >= 12 && hour < 18) return 'Boa tarde';
+    return 'Boa noite';
   };
 
   const handleNumberClick = (num: string) => {
@@ -91,7 +91,7 @@ export const PinKiosk = ({ onSuccess }: PinKioskProps) => {
           {timeString}
         </h1>
         <div className="bg-white/10 px-6 py-2 rounded-full border border-white/20">
-          <p className="text-xl text-white font-medium">{getGreeting()}, Bem-vindo à Webminds</p>
+          <p className="text-xl text-white font-medium">{getGreeting()}, bem-vindo à Webminds</p>
         </div>
       </div>
 
