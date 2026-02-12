@@ -95,7 +95,7 @@ export const PinKiosk = ({ onSuccess }: PinKioskProps) => {
         </div>
       </div>
 
-      <div className="flex flex-col bg-[rgb(190,190,190)] p-4 md:p-10 pt-4 md:pt-10 pb-4 md:pb-10">
+      <div className="flex flex-col bg-[rgb(190,190,190)] p-4 md:p-10 pt-4 md:pt-10 pb-0 md:pb-10">
         <div className="flex flex-col md:flex-row gap-12 items-center justify-between w-full">
           {/* Left: PIN Display Area */}
           <div className="flex-1 flex flex-col items-center md:items-start w-full md:ml-[60px]">
