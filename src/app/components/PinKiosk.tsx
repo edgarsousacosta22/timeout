@@ -98,8 +98,8 @@ export const PinKiosk = ({ onSuccess }: PinKioskProps) => {
       <div className="flex flex-col bg-[rgb(190,190,190)] p-10 pt-10 pb-6">
         <div className="flex flex-col md:flex-row gap-12 items-center justify-between w-full">
           {/* Left: PIN Display Area */}
-          <div className="flex-1 flex flex-col items-center md:items-start w-full">
-            <p className="text-base md:text-xl text-[rgb(0,0,0)] font-medium mb-4 text-center md:text-left">Digite o seu PIN</p>
+          <div className="flex-1 flex flex-col items-center md:items-start w-full md:ml-[60px]">
+            <p className="text-base md:text-xl text-[rgb(0,0,0)] font-medium mb-[16px] text-center md:text-left md:ml-[42px]">Digite o seu PIN</p>
             <div className="w-full max-w-[200px] md:max-w-[240px] h-14 md:h-16 bg-slate-50 rounded-2xl flex items-center justify-center gap-3 px-6 shadow-inner relative overflow-hidden mx-auto md:mx-0">
               {isLoading && (
                 <div className="absolute inset-0 bg-white/50 flex items-center justify-center z-10">
