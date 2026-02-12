@@ -38,7 +38,7 @@ const App = () => {
                 <img src={logo} alt="Logotipo" className="h-[250px] w-[250px] md:h-[400px] md:w-[400px] portrait:h-[600px] portrait:w-[600px] lg:h-[400px] lg:w-[400px]"/>
               </div>
               <PinKiosk onSuccess={handleLoginSuccess} />
-            </>
+            </>      
           ) : (
             <Dashboard user={currentUser} onLogout={handleLogout} />
           )}
