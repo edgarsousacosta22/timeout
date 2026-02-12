@@ -1,4 +1,4 @@
-\import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Clock } from '@/app/components/Clock';
 import { PinKiosk } from '@/app/components/PinKiosk';
 import { Dashboard } from '@/app/components/Dashboard';
