@@ -16,7 +16,7 @@ export const Keypad = ({ onNumberClick, onDelete, onConfirm }: KeypadProps) => {
         <button
           key={num}
           onClick={() => onNumberClick(num)}
-          className="flex h-15 w-15 items-center justify-center rounded-2xl bg-slate-100 text-3xl font-semibold text-[rgb(0,0,0)] transition-all active:scale-95 active:bg-slate-200"
+          className="flex h-15 w-15 items-center justify-center rounded-2xl bg-slate-100 text-3xl font-semibold text-[rgb(3, 25, 176)] transition-all active:scale-95 active:bg-slate-200"
         >
           {num}
         </button>
